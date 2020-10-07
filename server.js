@@ -40,7 +40,7 @@ app.get("/", function(req, res) {
 
 //directs t the home page (API)
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 //directs to the reservation page (API)
@@ -72,7 +72,7 @@ app.post("/api/tables", function(req, res) {
 
   console.log(newTable);
 
-  if (tables.length >= 5) {
+  if (tables.length <= 4) {
     tables.push(newTable);
   }
   else {
