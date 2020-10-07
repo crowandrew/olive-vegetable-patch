@@ -64,7 +64,24 @@ app.get("/api/waitlist", function (req, res) {
   return res.json(waitlist);
 });
 
+// Create New Tables - takes in JSON input
+app.post("/api/tables", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body parsing middleware
+  const newTable = req.body;
 
+  console.log(newTable);
+
+  if (tables.length >= 5) {
+    tables.push(newTable);
+  }
+  else {
+    waitlist.push(newTable); 
+  }
+
+
+  res.json(newTable);
+});
 
 // Listener
 // ===========================================================
