@@ -11,6 +11,25 @@ const PORT = process.env.PORT || 3000;;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Arrays
+// ===========================================================
+const tables = [
+  {
+    name: "Bob",
+    phone: "Number",
+    email: "bobemail@email.com",
+    uniqueId: "bobseats"
+  }
+];
+
+const waitlist = [
+  {
+      name: "Bob",
+      phone: "Number",
+      email: "bobemail@email.com",
+      uniqueId: "bobseats"
+  }
+];
 
 // Routes
 // ===========================================================
