@@ -15,6 +15,34 @@ app.get("/", function(req, res) {
   });
 
 
+//directs t the home page (API)
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+});
+
+//directs to the reservation page (API)
+app.get("/reserve", function (req, res) {
+  res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+//directs to the tables page
+app.get("/tables", function (req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+
+//adding new reservation to "tables" page (Post)
+app.get("/api/tables", function (req, res) {
+  return res.json(tables);
+});
+
+// adding to "Wait List"
+app.get("/api/waitlist", function (req, res) {
+  return res.json(waitlist);
+});
+
+
+
 // Listener
 // ===========================================================
 app.listen(PORT, function() {
