@@ -33,10 +33,6 @@ const waitlist = [
 
 // Routes
 // ===========================================================
-app.get("/", function(req, res) {
-    res.send("Welcome to Olive Vegetable Patch!");
-  });
-
 
 //directs t the home page (API)
 app.get("/", function (req, res) {
